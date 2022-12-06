@@ -1,5 +1,6 @@
 import { Box, Button, Typography } from '@mui/material'
 import React from 'react'
+// import Button from '@mui/material/Button';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 const Card = (props) => {
     return (
@@ -16,18 +17,15 @@ const Card = (props) => {
             <Box p={1} >
                 <Box display={'flex'} flexDirection={'row'} justifyContent={'space-between'} alignItems={'center'}
                 >
-                    <Typography fontSize={'20px'} color={'primary.main'}>Product name</Typography>
-                    <Typography color={'secondary.main'}>13.99$</Typography>
+                    <Typography fontSize={'20px'} color={'primary.main'}>{props.name}</Typography>
+                    <Typography color={'secondary.main'}>{props.price}$</Typography>
                 </Box>
                 <Typography variant='caption'>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.
+                {props.description}
                 </Typography>
+                <Box justifyContent={'flex-end'} display={'flex'} flexDirection={'row'}>
+            <Button variant="contained" size='small' sx={{marginX: '3rem', marginTop: '1rem'}}>Add to cart</Button>
             </Box>
-
-            <Box justifyContent={'flex-end'} display={'flex'} flexDirection={'row'}>
-                <Button sx={{ minHeight: 0, minWidth: 0, padding: 0 }}>
-                    <AddBoxIcon sx={{transform: 'scale(1.2)'}}/>
-                </Button>
             </Box>
         </Box>
     )

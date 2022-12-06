@@ -10,12 +10,12 @@ const Navbar = () => {
   };
  
   
-  const handleRecruiter = async () =>{
+  const handleToronto = async () =>{
    
     console.log('viewer1')
     setAnchorEl(null);
   };
-  const handleSeeker = async () => {
+  const handleKitchner = async () => {
    
     console.log('viewer2')
     setAnchorEl(null);
@@ -49,12 +49,14 @@ const Navbar = () => {
                         'aria-labelledby': 'basic-button',
                     }}
                 >
-                    <MenuItem onClick={handleRecruiter}>Toronto</MenuItem>
-                    <MenuItem onClick={handleSeeker}>Kitchener</MenuItem>
+                    <MenuItem onClick={handleToronto}>Toronto</MenuItem>
+                    <MenuItem onClick={handleKitchner}>Kitchener</MenuItem>
                 </Menu>
+                
                 <Button>
                     offers
                 </Button>
+                
                 <Button>
                     Cart
                 </Button>
