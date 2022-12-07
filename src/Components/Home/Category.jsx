@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Card from './Card'
 import image from '../../Assets/pizza.jpg'
-import burger from '../../Assets/burger.jpg'
+// import burger from '../../Assets/burger.jpg'
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -84,9 +84,9 @@ export default function BasicTabs() {
                     justifyContent={'space-evenly'}
                 >
                     {items.map((item, index) =>
-                    {if(item.Category == 'pizza')
+                    {if(item.Category === 'pizza')
                         return <Card image={image} name={item.name} price={item.Price} description={item.Description} />
-                    })},
+                    },{})},
 
                 </Box>
             </TabPanel>
@@ -101,9 +101,9 @@ export default function BasicTabs() {
                     justifyContent={'space-evenly'}
                 >
                      {items.map((item, index) =>
-                    {if(item.Category == 'burger')
+                    {if(item.Category === 'burger')
                         return <Card image={image} name={item.name} price={item.Price} description={item.Description} />
-                    })},
+                    },{})},
                 </Box>
             </TabPanel>
 
@@ -118,9 +118,9 @@ export default function BasicTabs() {
                     justifyContent={'space-evenly'}
                 >
                     {items.map((item, index) =>
-                    {if(item.Category == 'drinks')
+                    {if(item.Category === 'drinks')
                         return <Card image={image} name={item.name} price={item.Price} description={item.Description} />
-                    })},
+                    },{})},
                 </Box>
             </TabPanel>
         </Box>
