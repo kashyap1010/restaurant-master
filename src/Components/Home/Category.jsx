@@ -43,21 +43,21 @@ function a11yProps(index) {
 
 export default function BasicTabs() {
     const [value, setValue] = React.useState(0);
-    let items = [{ id: 1, name: 'Veg Loaded', Price: 10.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'pizza' },
-    { id: 2, name: 'Peproni', Price: 11.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'pizza' },
-    { id: 3, name: 'Margerita', Price: 7.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'pizza' },
-    { id: 4, name: 'Bacon peproni', Price: 12.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'pizza' },
-    { id: 5, name: 'Chees Burger', Price: 5.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'burger' },
-    { id: 6, name: 'Chees Pav', Price: 6.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'burger' },
-    { id: 7, name: 'BigMac', Price: 4.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'burger' },
-    { id: 8, name: 'Misal Pav', Price: 5.29, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'burger' },
-    { id: 9, name: 'Egg and Cheese', Price: 2.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'burger' },
-    { id: 10, name: 'Coke', Price: 1.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'drinks' },
-    { id: 11, name: 'Sprite', Price: 1.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'drinks' },
-    { id: 12, name: 'Ginger ale', Price: 1.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'drinks' },
-    { id: 13, name: 'Root beer', Price: 1.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'drinks' },
-    { id: 14, name: 'Root beer', Price: 1.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'drinks' },
-    { id: 15, name: 'Mashroom spice', Price: 10.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'pizza' }];
+    // let items = [{ id: 1, name: 'Veg Loaded', Price: 10.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'pizza' },
+    // { id: 2, name: 'Peproni', Price: 11.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'pizza' },
+    // { id: 3, name: 'Margerita', Price: 7.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'pizza' },
+    // { id: 4, name: 'Bacon peproni', Price: 12.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'pizza' },
+    // { id: 5, name: 'Chees Burger', Price: 5.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'burger' },
+    // { id: 6, name: 'Chees Pav', Price: 6.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'burger' },
+    // { id: 7, name: 'BigMac', Price: 4.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'burger' },
+    // { id: 8, name: 'Misal Pav', Price: 5.29, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'burger' },
+    // { id: 9, name: 'Egg and Cheese', Price: 2.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'burger' },
+    // { id: 10, name: 'Coke', Price: 1.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'drinks' },
+    // { id: 11, name: 'Sprite', Price: 1.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'drinks' },
+    // { id: 12, name: 'Ginger ale', Price: 1.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'drinks' },
+    // { id: 13, name: 'Root beer', Price: 1.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'drinks' },
+    // { id: 14, name: 'Root beer', Price: 1.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'drinks' },
+    // { id: 15, name: 'Mashroom spice', Price: 10.99, Description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate.', Category: 'pizza' }];
 
 
     const handleChange = (event, newValue) => {
@@ -83,11 +83,17 @@ export default function BasicTabs() {
                     flexWrap={'wrap'}
                     justifyContent={'space-evenly'}
                 >
-                    
-                    {items.map((item) =>
+
+<Card image={image} name={'Veg loaded'} price={10.99} description={"jncjn ajdnjnadscnakj adjncjkand"} />
+<Card image={image} name={'Veg loaded'} price={10.99} description={"jncjn ajdnjnadscnakj adjncjkand"} />
+<Card image={image} name={'Veg loaded'} price={10.99} description={"jncjn ajdnjnadscnakj adjncjkand"} />
+<Card image={image} name={'Veg loaded'} price={10.99} description={"jncjn ajdnjnadscnakj adjncjkand"} />
+<Card image={image} name={'Veg loaded'} price={10.99} description={"jncjn ajdnjnadscnakj adjncjkand"} />
+                  
+                    {/* {items.map((item) =>
                     {if(item.Category === 'pizza')
                         return <Card image={image} name={item.name} price={item.Price} description={item.Description} />
-                    })},
+                    })}, */}
 
                 </Box>
             </TabPanel>
@@ -101,10 +107,16 @@ export default function BasicTabs() {
                     flexWrap={'wrap'}
                     justifyContent={'space-evenly'}
                 >
-                     {items.map((item, index) =>
+                    <Card image={image} name={'Cheege Burger'} price={11.99} description={"Delicious burger in the city"} />
+                    <Card image={image} name={'Cheege Burger'} price={11.99} description={"Delicious burger in the city"} />
+                    <Card image={image} name={'Cheege Burger'} price={11.99} description={"Delicious burger in the city"} />
+                    <Card image={image} name={'Cheege Burger'} price={11.99} description={"Delicious burger in the city"} />
+                    <Card image={image} name={'Cheege Burger'} price={11.99} description={"Delicious burger in the city"} />
+
+                     {/* {items.map((item, index) =>
                     {if(item.Category === 'burger')
                         return <Card image={image} name={item.name} price={item.Price} description={item.Description} />
-                    },{})},
+                    },{})}, */}
                 </Box>
             </TabPanel>
 
@@ -118,10 +130,13 @@ export default function BasicTabs() {
                     flexWrap={'wrap'}
                     justifyContent={'space-evenly'}
                 >
-                    {items.map((item) =>
+                    <Card image={image} name={'ginger ale'} price={1.99} description={"jncjn ajdnjnadscnakj adjncjkand"} />
+                    <Card image={image} name={'ginger ale'} price={1.99} description={"jncjn ajdnjnadscnakj adjncjkand"} />
+                    
+                    {/* {items.map((item) =>
                     {if(item.Category === 'drinks')
                         return <Card id={item.id} image={image} name={item.name} price={item.Price} description={item.Description} />
-                    })},
+                    },{})}, */}
                 </Box>
             </TabPanel>
         </Box>
