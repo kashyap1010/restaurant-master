@@ -2,12 +2,12 @@ import { Box, Typography, TextField, Button, styled, } from '@mui/material'
 import React from 'react'
 import { useState } from 'react'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import axios from "axios"
+// import axios from "axios"
 import Changepass from './Changepass';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Login = () => {
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const [forgot, setPass] = useState(false)
     const [inputs, setinputs] = useState({
         email: "",
@@ -32,7 +32,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const { email, password } = inputs
+        // const { email, password } = inputs
         console.log(inputs)
         // if (email && password) {
         //     axios.post("/login", inputs)
