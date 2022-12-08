@@ -2,6 +2,7 @@ import { Box } from '@mui/system'
 import React from 'react'
 import Navbar from '../Navbar'
 import Menu from './Menu'
+import Category from './Category'
 
 
 const Home = () => {
@@ -10,7 +11,7 @@ const Home = () => {
   return (
     <Box display={'flex'} flexDirection={'column'}>
       <Navbar />
-      <Menu />
+      <Category />
     </Box>
   )
 }
