@@ -15,7 +15,7 @@ const Navbar = () => {
     console.log('viewer1')
     setAnchorEl(null);
   };
-  const handleKitchner = async () => {
+  const handleKitchener = async () => {
    
     console.log('viewer2')
     setAnchorEl(null);
@@ -50,13 +50,11 @@ const Navbar = () => {
                     }}
                 >
                     <MenuItem onClick={handleToronto}>Toronto</MenuItem>
-                    <MenuItem onClick={handleKitchner}>Kitchener</MenuItem>
+                    <MenuItem onClick={handleKitchener}>Kitchener</MenuItem>
                 </Menu>
-                
                 <Button>
                     offers
                 </Button>
-                
                 <Button>
                     Cart
                 </Button>

@@ -3,7 +3,7 @@ import { Box, Typography, TextField, Button } from '@mui/material'
 import { useState } from 'react'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import axios from 'axios';
-import { NavLink } from 'react-router-dom';
+import { Navigate, NavLink } from 'react-router-dom';
 
 const Register = () => {
     const handleChange = (e) => {
@@ -18,16 +18,15 @@ const Register = () => {
         email: "",
         password: "",
         number: "",
-        ID: "",
-        rePass: "",
-        batch: ""
+        
     })
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const { name, email, password, number, ID, rePass, batch } = inputs
-        if (name && email && password && number && ID && batch && (password[0] === rePass[0])) {
-            axios.post("/register", inputs)
+        const { name, email, password, number } = inputs
+        if (name && email && password && number ) {
+            console.log(inputs);
+            axios.post("/register",inputs)
                 .then(res => {
                     alert(res.data.message)
                 })
@@ -102,12 +101,6 @@ const Register = () => {
                             value={inputs.password}
                             onChange={handleChange}
                             size='small' margin='normal' type={"password"} placeholder='Password' />
-                        <TextField
-                            autoComplete='off'
-                            name='rePass'
-                            value={inputs.rePass}
-                            onChange={handleChange}
-                            size='small' margin='normal' type={"password"} placeholder='Confirm Password' />
                     </Box>
                     
                    

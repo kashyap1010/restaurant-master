@@ -2,12 +2,12 @@ import { Box, Typography, TextField, Button, styled, } from '@mui/material'
 import React from 'react'
 import { useState } from 'react'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-// import axios from "axios"
+import axios from "axios"
 import Changepass from './Changepass';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     const [forgot, setPass] = useState(false)
     const [inputs, setinputs] = useState({
         email: "",
@@ -32,31 +32,19 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // const { email, password } = inputs
+        const { email, password } = inputs
         console.log(inputs)
-        // if (email && password) {
-        //     axios.post("/login", inputs)
-        //         .then(res => {
-        //             alert(res.data.message)
-        //             if (res.data.message === "LogIn Sucessful") {
-        //                 const viewer = sessionStorage.getItem('viewer')
-        //                 sessionStorage.setItem('sessionData', JSON.stringify(res.data.user))
-        //                 if(viewer === '1'){
-        //                     navigate('/addjob', { replace: true })
-        //                 }
-        //                 else if(viewer === '2'){
-        //                     navigate('/jobpage', { replace: true })
-        //                 }
-        //             }
-        //             else if(res.data.message === "Admin Login Sucessful"){
-        //                 sessionStorage.setItem('viewer','0')
-        //                 sessionStorage.setItem('sessionData', JSON.stringify(res.data.user))
-        //                 navigate('/reports')
-        //             }
-        //         })
-        // } else {
-        //     alert("Invalid Input")
-        // }
+        if (email && password) {
+            axios.post("/login", inputs)
+                .then(res => {
+                    alert(res.data.message)
+                    if (res.data.message === "LogIn Sucessful") {
+                       navigate('/home')
+                    }
+                })
+        } else {
+            alert("Invalid Input")
+        }
 
     }
     const handleReset = (e) => {

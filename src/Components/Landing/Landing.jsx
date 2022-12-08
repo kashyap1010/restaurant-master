@@ -1,7 +1,7 @@
 import { Box, Button, styled, Typography } from '@mui/material'
 import React from 'react'
 import image from '../../Assets/landing.jpg'
-import { NavLink } from 'react-router-dom';
+import { Navigate, NavLink } from 'react-router-dom';
 
 const Landing = () => {
 
