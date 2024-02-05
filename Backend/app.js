@@ -1,20 +1,28 @@
 const express = require("express");
 const app = express();
+const cookieParser = require('cookie-parser')
+const path = require('path')
 require("./Connection/connection")
+const dotenv = require('dotenv')
+const PORT = process.env.PORT || 9002
+dotenv.config({ path: "././config.env" })
+//hello from kashyap
+var cors = require('cors')
+const origin = ["https://yashrestaurant.netlify.app", "http://localhost:3000"]
+app.use(cors({
+    credentials: true,
+    origin: origin,
+    methods: ["GET", "POST"],
+    preflightContinue: true,
+}));
 
-const User = require("./Models/Users")
-
+app.use(cookieParser())
 app.use(express.json())
 
-const middleware = (req,res,next)=>{
-    console.log('middleware is running');
-    next();
-}
 
 app.use(require('./router/auth'))
 
 
-
-app.listen(9002,()=>{
-    console.log("Be Started at port 9002")
- })
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Be Started at port ${process.env.PORT}`)
+})

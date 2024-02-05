@@ -1,9 +1,11 @@
 var mongoose = require('mongoose');
+const dotenv = require('dotenv')
 
-var url = "mongodb+srv://kashyap1234:kashyap1234@cluster0.vgelwbe.mongodb.net/Restaurant?retryWrites=true&w=majority";
+dotenv.config({path:"././config.env"})
+var url = process.env.DATABASE;
 
 mongoose.connect(url,).then(()=> {
     console.log('connection succesful');
 
-}).catch((e)=> console.log('no connection'));
+}).catch((e)=> console.log(e));
 

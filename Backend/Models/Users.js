@@ -1,4 +1,6 @@
 const mongoose = require("mongoose")
+const bcrypt = require("bcryptjs")
+const jwt = require('jsonwebtoken')
 const Infouser = new mongoose.Schema({
     name: {
         type: String,
@@ -23,10 +25,66 @@ const Infouser = new mongoose.Schema({
         required: true,
         minlength: [8, "Password must be Greater than 8 characters"]
     },
+    tokens: [
+        {
+            token: {
+                type: String,
+                required: true,
+            }
+        }
+    ],
+    incart: [
+        {
+            productId: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Products",
+            },
+            name:{
+                type:String,
+            },
+            count: {
+                type: Number,
+            },
+            total: {
+                type:Number,
+            },
+            size:{
+                type: mongoose.Schema.Types.Mixed,
+            },
+            extra:[
+                {
+                    type: mongoose.Schema.Types.Mixed
+                }
+            ]
+        }
+    ]
 
 })
 
-//Create Model
+//generating token
+
+Infouser.methods.generateAuthToken = async function () {
+    try {
+        let tokenLocal = jwt.sign({ _id: this._id }, process.env.SECRET_KEY);
+        this.tokens = this.tokens.concat({ token: tokenLocal });
+        await this.save();
+        return tokenLocal;
+
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+
+//hash code
+
+Infouser.pre('save', async function (next) {
+
+    if (this.isModified('password')) {
+        this.password = await bcrypt.hash(this.password, 12);
+    }
+    next();
+})
 
 const Users = mongoose.model("Users", Infouser);
 
